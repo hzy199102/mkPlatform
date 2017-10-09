@@ -1,0 +1,23 @@
+{
+  "name": "mk_platform",
+  "version": "1.0.0",
+  "description": "this is a markdown platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hzy199102/mkPlatform.git"
+  },
+  "keywords": "markdown",
+  "author": "dahuang0217",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hzy199102/mkPlatform/issues"
+  },
+  "homepage": "https://github.com/hzy199102/mkPlatform#readme",
+  "devDependencies": {
+    "i5ting_toc": "^1.1.5"
+  }
+}

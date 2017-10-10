@@ -17,7 +17,8 @@
     "url": "https://github.com/hzy199102/mkPlatform/issues"
   },
   "homepage": "https://github.com/hzy199102/mkPlatform#readme",
-  "devDependencies": {
+  "devDependencies": {},
+  "dependencies": {
     "i5ting_toc": "^1.1.5"
   }
 }

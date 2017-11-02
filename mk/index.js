@@ -23,9 +23,15 @@ function tocmd(options) {
 	}
 
 	// 目录
-	if (test('-d', sourceFile)) {
-		fileType = 'directory'
+    if (test('-e', sourceFile)) {
+        if (test('-d', sourceFile)) {
+            fileType = 'directory'
+        }
+    } else {
+        console.log("-f is Required and exists")
+        return false
 	}
+
 
 	log('pwd=' + pwd)
 	log('fileName = ' + fileName)

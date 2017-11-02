@@ -32,7 +32,7 @@ var verbose = false
 if (program.file) {
 	fileName = program.file
 } else {
-	console.log("-f is Required")
+	console.log("-f is Required and exists")
 	return false
 }
 if (program.open) {

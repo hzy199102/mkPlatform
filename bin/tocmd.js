@@ -6,61 +6,48 @@
 
 var program = require('commander')
 var version = require("../package.json").version
+var index = require('../mk/index.js')
 
-program
-	.version(version)
-	.usage(" a node npm wrapper of hzy_mkPlatform https://github.com/hzy199102/mkPlatform ")
-	.option('-f, --file [filename]', ' Required ')
-	.option('-o, --open', 'open in browser')
-	.option('-v, --verbose', '打印详细日志')
-	.parse(process.argv)
-
-var pwd = process.cwd()
-var filename = "README.md"
-var is_open = false
-
-if (program.file) {
-	filename = program.file
-}
-
-if (program.open) {
-	is_open = program.open
-}
-
-var verbose = false
-if (program.verbose) {
-	verbose = program.verbose
-}
-
-var _verbose = verbose
 function log(str) {
-	if (_verbose == true) {
+	if (verbose) {
 		console.log(str)
 	}
 }
 
-log('filename = ' + filename)
-log('verbose = ' + verbose)
+program
+	.version(version)
+	.usage(" a node npm wrapper of hzy_mkPlatform https://github.com/hzy199102/mkPlatform ")
+	.option('-f, --file [fileName]', ' Required ,can file or directory ')
+	.option('-o, --open', 'open in browser')
+	.option('-v, --verbose', 'log')
+	.option('-t, --template [template]', 'markdown template, default [one]')
+	.parse(process.argv)
 
-var source_file = filename
+var pwd = process.cwd()
+var fileName = ""
+var template = 'one'
+var open = false
+var verbose = false
 
-var markd_config = {
-	debug: false
+if (program.file) {
+	fileName = program.file
+} else {
+	console.log("-f is Required")
+	return false
+}
+if (program.open) {
+	open = program.open
+}
+if (program.verbose) {
+	verbose = program.verbose
+}
+if (program.template) {
+	template = program.template
 }
 
-var source_file_name = pwd + '/' + source_file
-var file_name = source_file_name.split('/').pop()
-var _file_name = file_name.split('.')[0]
-
-if (file_name.indexOf('\\') > 0) {
-	_file_name = file_name.substring(file_name.lastIndexOf("\\")).split('.')[0]
-}
-var dest_file_path = pwd + '/preview/' + _file_name + '.html'
-
-log('pwd=' + pwd)
-log('source_file_name=' + source_file_name)
-log('file_name=' + file_name)
-log('_file_name=' + _file_name)
-log('dest_file_path=' + dest_file_path)
-
-require('../index')(pwd, source_file_name, dest_file_path, is_open, markd_config)
+index({
+	pwd: pwd,
+	fileName: fileName,
+	open: open,
+	verbose: verbose
+})

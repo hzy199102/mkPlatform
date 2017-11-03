@@ -42,7 +42,7 @@ function wf(options) {
 			// scream: require('../renderer/assets/face/Face022.png'),
 			//console.log('wx_' + x + ": require('../renderer/assets/wx_face/" + files[i] + "'),")
 		}
-		content+= temp
+		content += temp
 		fs.writeFile(destPath, content, {
 			flag: 'w'
 		}, function (err) {

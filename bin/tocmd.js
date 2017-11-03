@@ -49,5 +49,6 @@ index({
 	pwd: pwd,
 	fileName: fileName,
 	open: open,
-	verbose: verbose
+	verbose: verbose,
+	template: template
 })

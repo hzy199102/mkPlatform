@@ -6,7 +6,7 @@
 
 var program = require('commander')
 var version = require("../package.json").version
-var index = require('../mk/index.js')
+var index = require('../md/index.js')
 
 function log(str) {
 	if (verbose) {

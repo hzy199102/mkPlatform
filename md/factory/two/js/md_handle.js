@@ -108,7 +108,7 @@
             _md_header(opts);
 
             // 初始化ztree
-            $.fn.zTree.init(t,opts.ztreeSetting,opts._header_nodes).expandAll(opts.is_expand_all);
+            $.fn.zTree.init(opts._zTree, opts.ztreeSetting,opts._header_nodes).expandAll(opts.is_expand_all);
         });
     }
 
@@ -139,6 +139,46 @@
          * 标题加编号
          */
         _autoNumber: true,
+        /**
+         * ztree配置，具体参考ztreeAPI
+         */
+        ztreeSetting: {
+            view: {
+                dblClickExpand: false,
+                showLine: true,
+                showIcon: false,
+                selectedMulti: false
+            },
+            data: {
+                simpleData: {
+                    enable: true,
+                    idKey : "id",
+                    pIdKey: "pId",
+                    // rootPId: "0"
+                }
+            },
+            callback: {
+                beforeClick: function(treeId, treeNode) {
+                    $('a').removeClass('curSelectedNode');
+                    if(treeNode.id == 1){
+                        // TODO: when click root node
+                        console.log('click root table of content');
+                    }
+                    if($.fn.ztree_toc.defaults.is_highlight_selected_line == true) {
+                        $('#' + treeNode.id).css('color' ,'red').fadeOut("slow" ,function() {
+                            // Animation complete.
+                            $(this).show().css('color','black');
+                        });
+                    }
+                },
+                onRightClick: function(event, treeId, treeNode) {
+                    if(treeNode.id == 1){
+                        // TODO: when right_click root node:table content
+                        console.log('right_click root table of content');
+                    }
+                }
+            }
+        }
     };
 
 })(jQuery);

@@ -62,7 +62,7 @@
     _rename_header = function (opts, header_obj, level) {
         if (opts._headerLevel.length > level) {
             opts._headerLevel = opts._headerLevel.slice(0, level);
-            opts._headers[level - 1] ++;
+            opts._headerLevel[level - 1] ++;
         } else if (opts._headerLevel.length === level) {
             opts._headerLevel[level - 1]++;
         } else {
@@ -71,10 +71,10 @@
 
         if (opts._autoNumber) {
             // 另存为的文件里会有编号，所以有编号的就不再重新替换
-            if($(header_obj).text().indexOf( opts._headers.join('.') ) != -1){
+            if($(header_obj).text().indexOf( opts._headerLevel.join('.') ) != -1){
 
             }else{
-                $(header_obj).text(opts._headers.join('.') + '. ' + $(header_obj).text());
+                $(header_obj).text(opts._headerLevel.join('.') + '. ' + $(header_obj).text());
             }
         }
     }
@@ -89,7 +89,7 @@
      */
     _md_header = function (opts) {
         // 选择所有标题元素（h1 - h6）
-        $(opts._mdContent).find(':header').each(function() {
+        $('#' + opts._mdContentId).find(':header').each(function() {
             var level = parseInt(this.nodeName.substring(1), 10);
 
             _rename_header(opts, this, level);
@@ -102,30 +102,26 @@
         // 将defaults 和 options 参数合并到{}
         var opts = $.extend({},_defaults,options);
 
-        return this.each(function() {
-            opts._zTree = $(this);
+        _md_header(opts);
 
-            _md_header(opts);
-
-            // 初始化ztree
-            $.fn.zTree.init(opts._zTree, opts.ztreeSetting,opts._header_nodes).expandAll(opts.is_expand_all);
-        });
+        // 初始化ztree
+        $.fn.zTree.init($('#' + opts._zTreeId), opts.ztreeSetting, opts._zTree_nodes).expandAll(opts._ztree_expandAll);
     }
 
     //定义默认
     _defaults = {
         /**
-         * 目录树
+         * ztree id
          */
-        _zTree: null,
+        _zTreeId: 'md_tree',
         /**
          * 目录树数据源
          */
         _zTree_nodes: [],
         /**
-         * md内容
+         * md id
          */
-        _mdContent: 'md_content',
+        _mdContentId: 'md_content',
         /**
          * header级别
          */
@@ -139,6 +135,10 @@
          * 标题加编号
          */
         _autoNumber: true,
+        /**
+         * 默认折叠全部节点
+         */
+        _ztree_expandAll: false,
         /**
          * ztree配置，具体参考ztreeAPI
          */

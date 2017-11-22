@@ -1,99 +1,147 @@
+<!DOCTYPE html>
 <html>
   <head>
-	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>hzy_toc:test2</title>
-		<link href="../factory/one/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
-		<link href="../factory/one/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
-		<link href="../factory/one/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
-	    <link href="../factory/one/css/highlight/tomorrow-night-eighties.css" rel="stylesheet" type="text/css">
-	  <style>
-		pre {
-		    counter-reset: line-numbering;
-		    border: solid 1px #d9d9d9;
-		    border-radius: 0;
-		    background: #fff;
-		    padding: 0;
-		    line-height: 23px;
-		    margin-bottom: 30px;
-		    white-space: pre;
-		    overflow-x: auto;
-		    word-break: inherit;
-		    word-wrap: inherit;
-		}
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>hzy_toc:test2</title>
+  <link href="../factory/two/css/highlight/tomorrow-night-eighties.css" rel="stylesheet" type="text/css">
+  <link href="../factory/two/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" type="text/css">
+  <style>
+    #md_tree {
+      width:326px;
+      overflow: auto;
+      position: fixed;
+      z-index: 2147483647;
+      border: 0px none;
+      left: 0px;
+      top: 0px;
+    }
+    #md_content {
 
-		pre a::before {
-		  content: counter(line-numbering);
-		  counter-increment: line-numbering;
-		  padding-right: 1em; /* space after numbers */
-		  width: 25px;
-		  text-align: right;
-		  opacity: 0.7;
-		  display: inline-block;
-		  color: #aaa;
-		  background: #eee;
-		  margin-right: 16px;
-		  padding: 2px 10px;
-		  font-size: 13px;
-		  -webkit-touch-callout: none;
-		  -webkit-user-select: none;
-		  -khtml-user-select: none;
-		  -moz-user-select: none;
-		  -ms-user-select: none;
-		  user-select: none;
-		}
-
-		pre a:first-of-type::before {
-		  padding-top: 10px;
-		}
-
-		pre a:last-of-type::before {
-		  padding-bottom: 10px;
-		}
-
-		pre a:only-of-type::before {
-		  padding: 10px;
-		}
-
-		.highlight { background-color: #ffffcc } /* RIGHT */
-		</style>
+    }
+  </style>
   </head>
   <body>
-	  <div>
-				<div style='width:25%;'>
-						<ul id="tree" class="ztree" style='width:100%'>
-
-						</ul>
-				</div>
-        <div id='readme' style='width:70%;margin-left:20%;'>
-          	<article class='markdown-body'>
-            	<h1 id="-">一级标题</h1>
+    <div style='width:25%;float: left'>
+      <ul id="md_tree" class="ztree">
+      </ul>
+    </div>
+    <div style='width:75%;float: right;'>
+      <article id='md_content'>
+        <h2 id="hehheheh">hehheheh</h2>
+<p>hehehhehee</p>
+<h1 id="-">一级标题</h1>
 <p>A</p>
+<p>B</p>
+<p>C</p>
+<p>D</p>
+<p>E</p>
+<p>F</p>
+<p>G</p>
 <h2 id="aaa">aaa</h2>
-<p>aaaa</p>
+<ul>
+<li>1</li>
+<li>2</li>
+<li><p>3</p>
+</li>
+<li><p>1</p>
+</li>
+<li>2</li>
+<li>3</li>
+</ul>
 <h4 id="-1">四级标题1</h4>
 <p>四级标题</p>
 <h4 id="-2">四级标题2</h4>
 <p>四级标题2</p>
+<h3 id="-1">三级标题1</h3>
+<p>三级标题1</p>
+<h3 id="-2">三级标题2</h3>
+<p>三级标题2</p>
 <h2 id="bbbbbb">bbbbbb</h2>
+<blockquote>
+<p>这是一段引用</p>
+</blockquote>
+<p>要注意符号和文本之间的空格</p>
+<h2 id="eee">eee</h2>
+<p>eeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeee
+eeeeeeeeeeeeeeee</p>
+<p>##cccc</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">name</th>
+<th style="text-align:center">asd</th>
+<th style="text-align:right">zzz</th>
+<th style="text-align:center">asdasd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">sadaaaaaaaaaaaaaaa</td>
+<td style="text-align:center">asdsadsadsadsad</td>
+<td style="text-align:right">asdasddddd</td>
+<td style="text-align:center">11111</td>
+</tr>
+<tr>
+<td style="text-align:left">12</td>
+<td style="text-align:center">sadasd</td>
+<td style="text-align:right">22</td>
+<td style="text-align:center">44</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong>强调</strong></p>
+<h2 id="ddd">ddd</h2>
+<pre><code class="hljs lang-JavaScript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">$initHighlight</span>(<span class="hljs-params">block, cls</span>) </span>{
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">if</span> (cls.search(<span class="hljs-regexp">/\bno\-highlight\b/</span>) != <span class="hljs-number">-1</span>)
+      <span class="hljs-keyword">return</span> process(block, <span class="hljs-literal">true</span>, <span class="hljs-number">0x0F</span>) +
+             <span class="hljs-string">` class="<span class="hljs-subst">${cls}</span>"`</span>;
+  } <span class="hljs-keyword">catch</span> (e) {
+    <span class="hljs-comment">/* handle exception */</span>
+  }
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span> / <span class="hljs-number">2</span>; i &lt; classes.length; i++) {
+    <span class="hljs-keyword">if</span> (checkCondition(classes[i]) === <span class="hljs-literal">undefined</span>)
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'undefined'</span>);
+  }
+}
 
-          	</article>
-        </div>
-		</div>
+<span class="hljs-keyword">export</span>  $initHighlight;
+</code></pre>
+<pre><code class="hljs lang-JSON">[
+  {
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"apples"</span>,
+    <span class="hljs-attr">"count"</span>: [<span class="hljs-number">12000</span>, <span class="hljs-number">20000</span>],
+    <span class="hljs-attr">"description"</span>: {<span class="hljs-attr">"text"</span>: <span class="hljs-string">"..."</span>, <span class="hljs-attr">"sensitive"</span>: <span class="hljs-literal">false</span>}
+  },
+  {
+    <span class="hljs-attr">"title"</span>: <span class="hljs-string">"oranges"</span>,
+    <span class="hljs-attr">"count"</span>: [<span class="hljs-number">17500</span>, <span class="hljs-literal">null</span>],
+    <span class="hljs-attr">"description"</span>: {<span class="hljs-attr">"text"</span>: <span class="hljs-string">"..."</span>, <span class="hljs-attr">"sensitive"</span>: <span class="hljs-literal">false</span>}
+  }
+]
+</code></pre>
+<h2 id="eeee">eeee</h2>
+<p>这是最后</p>
+
+      </article>
+    </div>
   </body>
 </html>
-<script type="text/javascript" src="../factory/one/js/jquery-1.4.4.min.js"></script>
-<script type="text/javascript" src="../factory/one/js/jquery.ztree.all-3.5.min.js"></script>
-<script type="text/javascript" src="../factory/one/js/ztree_toc.js"></script>
-<script type="text/javascript" src="../factory/one/toc_conf.js"></script>
-
+<script type="text/javascript" src="../factory/two/js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="../factory/two/js/jquery.ztree.all.js"></script>
+<script type="text/javascript" src="../factory/two/js/md_handle.js"></script>
 <SCRIPT type="text/javascript" >
 <!--
 $(document).ready(function(){
-    var css_conf = eval(markdown_panel_style);
-    $('#readme').css(css_conf)
-    
-    var conf = eval(jquery_ztree_toc_opts);
-		$('#tree').ztree_toc(conf);
+    $('body').md_handle({
+
+    });
+	console.log("I love you")
 });
 //-->
 </SCRIPT>

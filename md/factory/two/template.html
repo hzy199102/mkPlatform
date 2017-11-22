@@ -6,21 +6,33 @@
   <link href="../factory/two/css/highlight/tomorrow-night-eighties.css" rel="stylesheet" type="text/css">
   <link href="../factory/two/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" type="text/css">
   <style>
+    #md_tree {
+      width:326px;
+      overflow: auto;
+      position: fixed;
+      z-index: 2147483647;
+      border: 0px none;
+      left: 0px;
+      top: 0px;
+    }
+    #md_content {
+
+    }
   </style>
   </head>
   <body>
-    <div style='width:25%;'>
+    <div style='width:25%;float: left'>
       <ul id="md_tree" class="ztree">
       </ul>
     </div>
-    <div style='width:70%;margin-left:20%;'>
+    <div style='width:75%;float: right;'>
       <article id='md_content'>
         {{{parse_markdown}}}
       </article>
     </div>
   </body>
 </html>
-<script type="text/javascript" src="../factory/two/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="../factory/two/js/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="../factory/two/js/jquery.ztree.all.js"></script>
 <script type="text/javascript" src="../factory/two/js/md_handle.js"></script>
 <SCRIPT type="text/javascript" >

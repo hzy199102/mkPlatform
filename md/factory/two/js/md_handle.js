@@ -237,7 +237,7 @@
         /**
          * 是否打印日志
          */
-        debug: true,
+        debug: false,
         /**
          * ztree id
          */
